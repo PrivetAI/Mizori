@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A100001 /* Bridge_LogicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100001 /* Bridge_LogicApp.swift */; };
+		A100002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100002 /* ContentView.swift */; };
+		A100003 /* BridgeWebPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100003 /* BridgeWebPanel.swift */; };
+		A100004 /* BridgeLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100004 /* BridgeLoadingScreen.swift */; };
+		A100005 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005 /* Palette.swift */; };
+		A100006 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006 /* Components.swift */; };
+		A100007 /* CustomShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007 /* CustomShapes.swift */; };
+		A100008 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100008 /* Toast.swift */; };
+		A100009 /* HashiRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100009 /* HashiRandom.swift */; };
+		A100010 /* HashiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100010 /* HashiModel.swift */; };
+		A100011 /* HashiSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100011 /* HashiSolver.swift */; };
+		A100012 /* HashiGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100012 /* HashiGenerator.swift */; };
+		A100013 /* PuzzleLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100013 /* PuzzleLibrary.swift */; };
+		A100014 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100014 /* GameState.swift */; };
+		A100015 /* Achievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100015 /* Achievements.swift */; };
+		A100016 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100016 /* DataStore.swift */; };
+		A100017 /* BoardSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100017 /* BoardSession.swift */; };
+		A100018 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100018 /* BoardView.swift */; };
+		A100019 /* BoardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100019 /* BoardScreen.swift */; };
+		A100020 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100020 /* PlayView.swift */; };
+		A100021 /* DailyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100021 /* DailyView.swift */; };
+		A100022 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100022 /* AwardsView.swift */; };
+		A100023 /* CodexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100023 /* CodexView.swift */; };
+		A100024 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100024 /* SettingsView.swift */; };
+		A100025 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100025 /* MoreView.swift */; };
+		A100026 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100026 /* OnboardingView.swift */; };
+		A100027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B100027 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B100001 /* Bridge_LogicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge_LogicApp.swift; sourceTree = "<group>"; };
+		B100002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B100003 /* BridgeWebPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeWebPanel.swift; sourceTree = "<group>"; };
+		B100004 /* BridgeLoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeLoadingScreen.swift; sourceTree = "<group>"; };
+		B100005 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		B100006 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		B100007 /* CustomShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShapes.swift; sourceTree = "<group>"; };
+		B100008 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		B100009 /* HashiRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashiRandom.swift; sourceTree = "<group>"; };
+		B100010 /* HashiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashiModel.swift; sourceTree = "<group>"; };
+		B100011 /* HashiSolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashiSolver.swift; sourceTree = "<group>"; };
+		B100012 /* HashiGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashiGenerator.swift; sourceTree = "<group>"; };
+		B100013 /* PuzzleLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleLibrary.swift; sourceTree = "<group>"; };
+		B100014 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		B100015 /* Achievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievements.swift; sourceTree = "<group>"; };
+		B100016 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		B100017 /* BoardSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSession.swift; sourceTree = "<group>"; };
+		B100018 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		B100019 /* BoardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardScreen.swift; sourceTree = "<group>"; };
+		B100020 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		B100021 /* DailyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyView.swift; sourceTree = "<group>"; };
+		B100022 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
+		B100023 /* CodexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexView.swift; sourceTree = "<group>"; };
+		B100024 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B100025 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		B100026 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		B100027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B100028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C100001 /* Bridge Logic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bridge Logic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F100001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G100001 = {
+			isa = PBXGroup;
+			children = (
+				G100002 /* Bridge Logic */,
+				G100003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		G100002 /* Bridge Logic */ = {
+			isa = PBXGroup;
+			children = (
+				B100001 /* Bridge_LogicApp.swift */,
+				B100002 /* ContentView.swift */,
+				B100003 /* BridgeWebPanel.swift */,
+				B100004 /* BridgeLoadingScreen.swift */,
+				B100005 /* Palette.swift */,
+				B100006 /* Components.swift */,
+				B100007 /* CustomShapes.swift */,
+				B100008 /* Toast.swift */,
+				B100009 /* HashiRandom.swift */,
+				B100010 /* HashiModel.swift */,
+				B100011 /* HashiSolver.swift */,
+				B100012 /* HashiGenerator.swift */,
+				B100013 /* PuzzleLibrary.swift */,
+				B100014 /* GameState.swift */,
+				B100015 /* Achievements.swift */,
+				B100016 /* DataStore.swift */,
+				B100017 /* BoardSession.swift */,
+				B100018 /* BoardView.swift */,
+				B100019 /* BoardScreen.swift */,
+				B100020 /* PlayView.swift */,
+				B100021 /* DailyView.swift */,
+				B100022 /* AwardsView.swift */,
+				B100023 /* CodexView.swift */,
+				B100024 /* SettingsView.swift */,
+				B100025 /* MoreView.swift */,
+				B100026 /* OnboardingView.swift */,
+				B100027 /* Assets.xcassets */,
+				B100028 /* Info.plist */,
+			);
+			path = "Bridge Logic";
+			sourceTree = "<group>";
+		};
+		G100003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C100001 /* Bridge Logic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		T100001 /* Bridge Logic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = L100001 /* Build configuration list for PBXNativeTarget "Bridge Logic" */;
+			buildPhases = (
+				P100001 /* Sources */,
+				F100001 /* Frameworks */,
+				R100001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bridge Logic";
+			productName = "Bridge Logic";
+			productReference = C100001 /* Bridge Logic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PROJECT_OBJ /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					T100001 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+				};
+			};
+			buildConfigurationList = L100002 /* Build configuration list for PBXProject "Bridge Logic" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = G100001;
+			productRefGroup = G100003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				T100001 /* Bridge Logic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		R100001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100027 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		P100001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100001 /* Bridge_LogicApp.swift in Sources */,
+				A100002 /* ContentView.swift in Sources */,
+				A100003 /* BridgeWebPanel.swift in Sources */,
+				A100004 /* BridgeLoadingScreen.swift in Sources */,
+				A100005 /* Palette.swift in Sources */,
+				A100006 /* Components.swift in Sources */,
+				A100007 /* CustomShapes.swift in Sources */,
+				A100008 /* Toast.swift in Sources */,
+				A100009 /* HashiRandom.swift in Sources */,
+				A100010 /* HashiModel.swift in Sources */,
+				A100011 /* HashiSolver.swift in Sources */,
+				A100012 /* HashiGenerator.swift in Sources */,
+				A100013 /* PuzzleLibrary.swift in Sources */,
+				A100014 /* GameState.swift in Sources */,
+				A100015 /* Achievements.swift in Sources */,
+				A100016 /* DataStore.swift in Sources */,
+				A100017 /* BoardSession.swift in Sources */,
+				A100018 /* BoardView.swift in Sources */,
+				A100019 /* BoardScreen.swift in Sources */,
+				A100020 /* PlayView.swift in Sources */,
+				A100021 /* DailyView.swift in Sources */,
+				A100022 /* AwardsView.swift in Sources */,
+				A100023 /* CodexView.swift in Sources */,
+				A100024 /* SettingsView.swift in Sources */,
+				A100025 /* MoreView.swift in Sources */,
+				A100026 /* OnboardingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BUILDCONFIG_DEBUG /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BUILDCONFIG_RELEASE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		TARGETCONFIG_DEBUG /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Bridge Logic/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bridge Logic";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bridgelogic.app;
+				PRODUCT_NAME = "Bridge Logic";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		TARGETCONFIG_RELEASE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Bridge Logic/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bridge Logic";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bridgelogic.app;
+				PRODUCT_NAME = "Bridge Logic";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		L100001 /* Build configuration list for PBXNativeTarget "Bridge Logic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				TARGETCONFIG_DEBUG /* Debug */,
+				TARGETCONFIG_RELEASE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		L100002 /* Build configuration list for PBXProject "Bridge Logic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BUILDCONFIG_DEBUG /* Debug */,
+				BUILDCONFIG_RELEASE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = PROJECT_OBJ /* Project object */;
+}
