@@ -3,7 +3,7 @@ import Foundation
 
 enum ConnectResult { case applied, illegalCross, noChannel, atMax }
 
-/// Drives one active puzzle: the player's bridge counts, selection, undo,
+/// Drives one active puzzle: the player's mizori counts, selection, undo,
 /// timer, hints, error checking and solved detection.
 final class BoardSession: ObservableObject {
     let puzzle: HashiPuzzle
@@ -40,8 +40,8 @@ final class BoardSession: ObservableObject {
         self.solver = HashiSolver(g)
         self.solution = solver.solvedValues() ?? Array(repeating: 0, count: g.edges.count)
 
-        if let saved = saved, saved.bridges.count == g.edges.count {
-            self.values = saved.bridges
+        if let saved = saved, saved.mizoris.count == g.edges.count {
+            self.values = saved.mizoris
             self.elapsed = saved.elapsed
             self.usedHint = saved.usedHint
             self.hadError = saved.hadError
@@ -80,9 +80,9 @@ final class BoardSession: ObservableObject {
     }
     var islandCount: Int { puzzle.clues.count }
     var networkConnected: Bool { solver.isConnected(values) }
-    var hasAnyBridge: Bool { values.contains { $0 > 0 } }
+    var hasAnyMizori: Bool { values.contains { $0 > 0 } }
 
-    /// Number of connected components over currently-placed bridges.
+    /// Number of connected components over currently-placed mizoris.
     func componentCount() -> Int {
         let n = puzzle.clues.count
         var parent = Array(0..<n)
@@ -130,7 +130,7 @@ final class BoardSession: ObservableObject {
         let current = values[e]
         let next = (current + 1) % 3
         if next >= 1 {
-            // would-be bridge must not cross an existing bridge
+            // would-be mizori must not cross an existing mizori
             for f in graph.crossing[e] where values[f] >= 1 {
                 triggerIllegal()
                 return .illegalCross
@@ -188,7 +188,7 @@ final class BoardSession: ObservableObject {
 
     // MARK: Hint
 
-    /// Applies the next forced bridge. Returns its reason for display.
+    /// Applies the next forced mizori. Returns its reason for display.
     func hint() -> String? {
         guard let step = solver.nextHint(playerValues: values) else { return nil }
         // Apply, respecting selection/undo.
@@ -198,7 +198,7 @@ final class BoardSession: ObservableObject {
         afterChange()
         let a = graph.edges[step.edge].a
         let locA = puzzle.clues[a]
-        return "Bridge near (\(locA.r + 1),\(locA.c + 1)) and its neighbour: \(step.reason)"
+        return "Mizori near (\(locA.r + 1),\(locA.c + 1)) and its neighbour: \(step.reason)"
     }
 
     func hintTargetEdge() -> Int? {
@@ -212,7 +212,7 @@ final class BoardSession: ObservableObject {
     func runCheck() -> Bool {
         var badEdges = Set<Int>()
         for e in 0..<values.count where values[e] != solution[e] {
-            // only flag a placed bridge that's wrong (too many / not in solution)
+            // only flag a placed mizori that's wrong (too many / not in solution)
             if values[e] > solution[e] { badEdges.insert(e) }
         }
         var badIslands = Set<Int>()

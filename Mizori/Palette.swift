@@ -8,8 +8,8 @@ enum Palette {
     static let waterDeep2  = Color(red: 0.129, green: 0.420, blue: 0.420) // darker teal
     static let sand        = Color(red: 0.910, green: 0.784, blue: 0.529) // #E8C887 island
     static let sandDeep    = Color(red: 0.831, green: 0.671, blue: 0.392) // island edge
-    static let driftwood   = Color(red: 0.478, green: 0.353, blue: 0.235) // #7A5A3C bridge
-    static let driftwood2  = Color(red: 0.380, green: 0.275, blue: 0.176) // bridge shadow
+    static let mizoriwood   = Color(red: 0.478, green: 0.353, blue: 0.235) // #7A5A3C mizori
+    static let mizoriwood2  = Color(red: 0.380, green: 0.275, blue: 0.176) // mizori shadow
     static let ink         = Color(red: 0.149, green: 0.188, blue: 0.184) // #26302F text
     static let inkSoft     = Color(red: 0.149, green: 0.188, blue: 0.184).opacity(0.55)
     static let coral       = Color(red: 0.878, green: 0.475, blue: 0.353) // #E0795A accent

@@ -29,7 +29,7 @@ enum PuzzleLibrary {
                    size: .s7,  difficulty: .easy,   count: 14, baseSeed: 0x1001),
         PuzzlePack(id: "lagoon",   title: "Sunlit Lagoon",   subtitle: "Small grids, gentle logic",
                    size: .s7,  difficulty: .medium, count: 14, baseSeed: 0x1002),
-        PuzzlePack(id: "shoals",   title: "Shallow Shoals",  subtitle: "Room to stretch your bridges",
+        PuzzlePack(id: "shoals",   title: "Shallow Shoals",  subtitle: "Room to stretch your mizoris",
                    size: .s9,  difficulty: .easy,   count: 14, baseSeed: 0x1003),
         PuzzlePack(id: "reef",     title: "Coral Reef",      subtitle: "Crossing channels appear",
                    size: .s9,  difficulty: .medium, count: 14, baseSeed: 0x1004),

@@ -51,9 +51,9 @@ final class DataStore: ObservableObject {
 
     func record(for id: String) -> PuzzleRecord? { state.records[id] }
 
-    func saveProgress(id: String, bridges: [Int], elapsed: Int, hadError: Bool, usedHint: Bool) {
+    func saveProgress(id: String, mizoris: [Int], elapsed: Int, hadError: Bool, usedHint: Bool) {
         var rec = state.records[id] ?? PuzzleRecord()
-        rec.bridges = bridges
+        rec.mizoris = mizoris
         rec.elapsed = elapsed
         if hadError { rec.hadError = true }
         if usedHint { rec.usedHint = true }
@@ -65,9 +65,9 @@ final class DataStore: ObservableObject {
 
     func dailyRecord(key: String) -> PuzzleRecord? { state.daily.progress[key] }
 
-    func saveDailyProgress(key: String, bridges: [Int], elapsed: Int, hadError: Bool, usedHint: Bool) {
+    func saveDailyProgress(key: String, mizoris: [Int], elapsed: Int, hadError: Bool, usedHint: Bool) {
         var rec = state.daily.progress[key] ?? PuzzleRecord()
-        rec.bridges = bridges
+        rec.mizoris = mizoris
         rec.elapsed = elapsed
         if hadError { rec.hadError = true }
         if usedHint { rec.usedHint = true }

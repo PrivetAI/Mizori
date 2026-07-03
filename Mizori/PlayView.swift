@@ -159,7 +159,7 @@ struct PackDetailView: View {
     private func puzzleTile(_ i: Int) -> some View {
         let rec = store.record(for: pack.puzzleID(for: i))
         let solved = rec?.solved ?? false
-        let inProgress = (rec?.bridges.contains { $0 > 0 }) ?? false
+        let inProgress = (rec?.mizoris.contains { $0 > 0 }) ?? false
         return Button {
             playingIndex = i
         } label: {

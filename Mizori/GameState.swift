@@ -2,10 +2,10 @@ import Foundation
 
 // MARK: - Per-puzzle progress
 
-/// Saved progress for a single puzzle. `bridges` holds the player's bridge
+/// Saved progress for a single puzzle. `mizoris` holds the player's mizori
 /// count per edge (edge order is deterministic from the puzzle definition).
 struct PuzzleRecord: Codable {
-    var bridges: [Int]
+    var mizoris: [Int]
     var solved: Bool
     var stars: Int
     var bestTime: Int        // seconds, 0 = none
@@ -14,11 +14,11 @@ struct PuzzleRecord: Codable {
     var elapsed: Int         // in-progress timer snapshot
 
     enum CodingKeys: String, CodingKey {
-        case bridges, solved, stars, bestTime, usedHint, hadError, elapsed
+        case mizoris, solved, stars, bestTime, usedHint, hadError, elapsed
     }
 
     init() {
-        bridges = []
+        mizoris = []
         solved = false
         stars = 0
         bestTime = 0
@@ -29,7 +29,7 @@ struct PuzzleRecord: Codable {
 
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
-        bridges = (try? c.decodeIfPresent([Int].self, forKey: .bridges)) ?? []
+        mizoris = (try? c.decodeIfPresent([Int].self, forKey: .mizoris)) ?? []
         solved = (try? c.decodeIfPresent(Bool.self, forKey: .solved)) ?? false
         stars = (try? c.decodeIfPresent(Int.self, forKey: .stars)) ?? 0
         bestTime = (try? c.decodeIfPresent(Int.self, forKey: .bestTime)) ?? 0
@@ -42,7 +42,7 @@ struct PuzzleRecord: Codable {
 // MARK: - Settings
 
 struct GameSettings: Codable {
-    var showRemaining: Bool          // show remaining-bridge counts on islands
+    var showRemaining: Bool          // show remaining-mizori counts on islands
     var colorblindMarker: Bool       // add a check glyph to satisfied islands
     var highlightCrossings: Bool     // flag illegal/over-filled live
     var confirmActions: Bool         // ask before restart

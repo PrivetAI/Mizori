@@ -9,12 +9,12 @@ struct OnboardingView: View {
         let body: String
     }
     private let steps: [Step] = [
-        Step(title: "Welcome to Bridge Logic",
-             body: "A calm island puzzle of pure deduction. Build bridges to link every island into one network — no luck, no guessing."),
+        Step(title: "Welcome to Mizori",
+             body: "A calm island puzzle of pure deduction. Build mizoris to link every island into one network — no luck, no guessing."),
         Step(title: "Read the numbers",
-             body: "Each island’s number is how many bridge-ends must touch it. Bridges run straight, horizontally or vertically, up to two between a pair."),
+             body: "Each island’s number is how many mizori-ends must touch it. Mizoris run straight, horizontally or vertically, up to two between a pair."),
         Step(title: "Connect & deduce",
-             body: "Tap two islands in line, or drag between them, to lay a bridge. Tap again to make it double, then to remove it. Bridges may never cross."),
+             body: "Tap two islands in line, or drag between them, to lay a mizori. Tap again to make it double, then to remove it. Mizoris may never cross."),
         Step(title: "Every puzzle is fair",
              body: "A solver proves every board has one logical solution. Stuck? Use Check or a Hint. Now — set sail and find your calm."),
     ]

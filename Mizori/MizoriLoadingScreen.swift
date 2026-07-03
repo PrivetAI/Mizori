@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct BridgeLaunchScreen: View {
+struct MizoriLaunchScreen: View {
     @State private var glow = false
 
     var body: some View {
@@ -9,11 +9,11 @@ struct BridgeLaunchScreen: View {
             VStack(spacing: 22) {
                 ZStack {
                     Circle().fill(Palette.waterDeep.opacity(0.12)).frame(width: 128, height: 128)
-                    BridgeGlyph()
-                        .stroke(Palette.driftwood, style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round))
+                    MizoriGlyph()
+                        .stroke(Palette.mizoriwood, style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round))
                         .frame(width: 76, height: 50)
                 }
-                Text("Bridge Logic")
+                Text("Mizori")
                     .font(.system(size: 32, weight: .black, design: .rounded))
                     .foregroundColor(Palette.ink)
                 Text("Linking the islands…")

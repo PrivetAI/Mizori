@@ -82,7 +82,7 @@ struct DailyView: View {
                     .font(.system(size: 13, weight: .semibold)).foregroundColor(Palette.inkSoft)
                 PrimaryButton(title: "Play Again", fill: Palette.sandDeep) { playing = true }
             } else {
-                PrimaryButton(title: (rec?.bridges.contains { $0 > 0 } ?? false) ? "Resume Today’s Puzzle" : "Play Today’s Puzzle") {
+                PrimaryButton(title: (rec?.mizoris.contains { $0 > 0 } ?? false) ? "Resume Today’s Puzzle" : "Play Today’s Puzzle") {
                     playing = true
                 }
             }

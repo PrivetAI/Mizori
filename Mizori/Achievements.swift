@@ -11,7 +11,7 @@ struct Achievement: Identifiable {
 enum Achievements {
 
     static let all: [Achievement] = [
-        Achievement(id: "first_bridge", title: "First Crossing",
+        Achievement(id: "first_mizori", title: "First Crossing",
                     detail: "Solve your very first puzzle.") { $0.stats.totalSolved >= 1 },
         Achievement(id: "five_solved", title: "Island Hopper",
                     detail: "Solve 5 puzzles.") { $0.stats.totalSolved >= 5 },

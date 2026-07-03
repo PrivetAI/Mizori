@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Renders the island grid + bridges with a Canvas. Camera math is anchored to
+/// Renders the island grid + mizoris with a Canvas. Camera math is anchored to
 /// the parent-passed `screenSize` (from an outer GeometryReader), never the
 /// Canvas closure's `size`, per the documented iOS Canvas pitfall.
 struct BoardView: View {
@@ -15,10 +15,10 @@ struct BoardView: View {
     @State private var pan: CGSize = .zero
     @State private var panStart: CGSize = .zero
 
-    private enum DragMode { case none, pan, bridge(Int) }
+    private enum DragMode { case none, pan, mizori(Int) }
     @State private var dragMode: DragMode = .none
-    @State private var bridgeDragFrom: Int? = nil
-    @State private var bridgeDragTo: CGPoint? = nil
+    @State private var mizoriDragFrom: Int? = nil
+    @State private var mizoriDragTo: CGPoint? = nil
 
     private var gridW: Int { session.puzzle.width }
     private var gridH: Int { session.puzzle.height }
@@ -71,7 +71,7 @@ struct BoardView: View {
         let step = cell0 * effectiveZoom
         let islRadius = step * 0.40
 
-        // Faint grid wash so bridges read clearly.
+        // Faint grid wash so mizoris read clearly.
         var dots = Path()
         for r in 0..<gridH {
             for c in 0..<gridW {
@@ -82,14 +82,14 @@ struct BoardView: View {
         }
         ctx.fill(dots, with: .color(Palette.waterDeep.opacity(0.08)))
 
-        // Bridges.
+        // Mizoris.
         for (i, e) in session.graph.edges.enumerated() {
             let v = session.values[i]
             guard v >= 1 else { continue }
             let a = center(of: e.a)
             let b = center(of: e.b)
             let isError = session.errorEdges.contains(i)
-            let color = isError ? Palette.danger : Palette.driftwood
+            let color = isError ? Palette.danger : Palette.mizoriwood
             let lw = max(2.2, step * 0.07)
             if v == 1 {
                 var p = Path(); p.move(to: a); p.addLine(to: b)
@@ -106,8 +106,8 @@ struct BoardView: View {
             }
         }
 
-        // Live bridge-drag ghost.
-        if let from = bridgeDragFrom, let to = bridgeDragTo {
+        // Live mizori-drag ghost.
+        if let from = mizoriDragFrom, let to = mizoriDragTo {
             var p = Path(); p.move(to: center(of: from)); p.addLine(to: to)
             ctx.stroke(p, with: .color(Palette.coral.opacity(0.6)),
                        style: StrokeStyle(lineWidth: max(2, step * 0.06), lineCap: .round, dash: [6, 6]))
@@ -176,9 +176,9 @@ struct BoardView: View {
                 switch dragMode {
                 case .none:
                     if let isl = island(at: v.startLocation) {
-                        dragMode = .bridge(isl)
-                        bridgeDragFrom = isl
-                        bridgeDragTo = v.location
+                        dragMode = .mizori(isl)
+                        mizoriDragFrom = isl
+                        mizoriDragTo = v.location
                     } else {
                         dragMode = .pan
                         panStart = pan
@@ -186,13 +186,13 @@ struct BoardView: View {
                 case .pan:
                     pan = CGSize(width: panStart.width + v.translation.width,
                                  height: panStart.height + v.translation.height)
-                case .bridge:
-                    bridgeDragTo = v.location
+                case .mizori:
+                    mizoriDragTo = v.location
                 }
             }
             .onEnded { v in
                 switch dragMode {
-                case .bridge(let a):
+                case .mizori(let a):
                     let dist = hypot(v.translation.width, v.translation.height)
                     if dist < 12 {
                         session.tapIsland(a)
@@ -205,8 +205,8 @@ struct BoardView: View {
                 default: break
                 }
                 dragMode = .none
-                bridgeDragFrom = nil
-                bridgeDragTo = nil
+                mizoriDragFrom = nil
+                mizoriDragTo = nil
             }
     }
 
@@ -223,7 +223,7 @@ struct BoardView: View {
     }
 
     private func clampPan() {
-        // Keep the board from drifting entirely off-screen.
+        // Keep the board from sliding entirely off-screen.
         let maxX = max(0, (boardW - screenSize.width) / 2 + cell0)
         let maxY = max(0, (boardH - screenSize.height) / 2 + cell0)
         pan.width = min(maxX, max(-maxX, pan.width))

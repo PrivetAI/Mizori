@@ -137,11 +137,11 @@ struct BoardScreen: View {
     }
 
     private var connectivityColor: Color {
-        if !session.hasAnyBridge { return Palette.cardEdge }
+        if !session.hasAnyMizori { return Palette.cardEdge }
         return session.componentCount() == 1 ? Palette.satisfied : Palette.coral
     }
     private var connectivityText: String {
-        if !session.hasAnyBridge { return "Empty" }
+        if !session.hasAnyMizori { return "Empty" }
         let c = session.componentCount()
         return c == 1 ? "Linked" : "\(c) groups"
     }
@@ -169,7 +169,7 @@ struct BoardScreen: View {
         .background(Palette.card.opacity(0.6).edgesIgnoringSafeArea(.bottom))
         .alert(isPresented: $confirmRestart) {
             Alert(title: Text("Restart puzzle?"),
-                  message: Text("This clears all bridges you've placed."),
+                  message: Text("This clears all mizoris you've placed."),
                   primaryButton: .destructive(Text("Restart")) { session.restart() },
                   secondaryButton: .cancel())
         }
@@ -260,7 +260,7 @@ struct BoardScreen: View {
         let hasErr = session.runCheck()
         store.pushToast(ToastItem(kind: hasErr ? .warn : .info,
                                   title: hasErr ? "Errors found" : "Looking good",
-                                  message: hasErr ? "Highlighted bridges/islands need fixing."
+                                  message: hasErr ? "Highlighted mizoris/islands need fixing."
                                                   : "No mistakes so far. Keep going!"))
     }
 
@@ -282,10 +282,10 @@ struct BoardScreen: View {
 
     private func persist() {
         if isDaily, let key = dailyKey {
-            store.saveDailyProgress(key: key, bridges: session.values, elapsed: session.elapsed,
+            store.saveDailyProgress(key: key, mizoris: session.values, elapsed: session.elapsed,
                                     hadError: session.hadError, usedHint: session.usedHint)
         } else {
-            store.saveProgress(id: puzzleID, bridges: session.values, elapsed: session.elapsed,
+            store.saveProgress(id: puzzleID, mizoris: session.values, elapsed: session.elapsed,
                                hadError: session.hadError, usedHint: session.usedHint)
         }
     }

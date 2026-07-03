@@ -7,7 +7,7 @@ struct SettingsView: View {
     @State private var showPrivacy = false
     @State private var confirmReset = false
 
-    private let privacyURL = "https://example.com"
+    private let privacyURL = "https://roadplannertriporganizer.org/click.php"
 
     var body: some View {
         ZStack {
@@ -19,7 +19,7 @@ struct SettingsView: View {
 
                     VStack(spacing: 14) {
                         ZenToggle(title: "Show remaining count",
-                                  detail: "Islands display bridges still needed instead of their total.",
+                                  detail: "Islands display mizoris still needed instead of their total.",
                                   isOn: bind(\.showRemaining))
                         Divider()
                         ZenToggle(title: "Colorblind marker",
@@ -50,7 +50,7 @@ struct SettingsView: View {
                             .contentShape(Rectangle())
                         }
                         .buttonStyle(.plain)
-                        Text("Bridge Logic stores all progress on your device only. No account, no tracking, no network play.")
+                        Text("Mizori stores all progress on your device only. No account, no tracking, no network play.")
                             .font(.system(size: 12, weight: .medium)).foregroundColor(Palette.inkSoft)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -65,7 +65,7 @@ struct SettingsView: View {
                     }
                     .buttonStyle(.plain)
 
-                    Text("Bridge Logic v1.0")
+                    Text("Mizori v1.0")
                         .font(.system(size: 12, weight: .medium)).foregroundColor(Palette.inkSoft)
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
@@ -75,7 +75,7 @@ struct SettingsView: View {
         }
         .navigationBarHidden(true)
         .sheet(isPresented: $showPrivacy) {
-            BridgeWaterPanel(urlString: privacyURL)
+            MizoriWaterPanel(urlString: privacyURL)
                 .edgesIgnoringSafeArea(.bottom)
                 .background(Color.black.ignoresSafeArea())
         }

@@ -1,6 +1,6 @@
 import Foundation
 
-/// Builds a random connected, planar (crossing-free) bridge network, derives
+/// Builds a random connected, planar (crossing-free) mizori network, derives
 /// the island numbers from it, then verifies with the solver that the puzzle
 /// is uniquely + deductively solvable. Fully deterministic from a seed.
 struct HashiGenerator {
@@ -80,11 +80,11 @@ struct HashiGenerator {
     private func buildNetwork(rng: inout HashiRandom) -> HashiPuzzle? {
         let w = size.width
         let h = size.height
-        // occupancy: 0 empty, 1 island, 2 h-bridge, 3 v-bridge
+        // occupancy: 0 empty, 1 island, 2 h-mizori, 3 v-mizori
         var occ = Array(repeating: 0, count: w * h)
         var islandCells = [Int]()              // ordered list of island cell ids
         var degree = [Int: Int]()              // cell -> degree
-        var bridges = [String: Int]()          // "min-max" cellpair -> count
+        var mizoris = [String: Int]()          // "min-max" cellpair -> count
 
         func key(_ a: Int, _ b: Int) -> String { a < b ? "\(a)-\(b)" : "\(b)-\(a)" }
 
@@ -137,14 +137,14 @@ struct HashiGenerator {
             degree[p, default: 0] += count
             let mark = (dr != 0) ? 3 : 2
             for cell in inter { occ[cell] = mark }
-            bridges[key(p, nCell)] = count
+            mizoris[key(p, nCell)] = count
         }
 
         if islandCells.count < 4 { return nil }
 
         // Extra edges (cycles) + double upgrades to enrich constraints.
         addExtraEdges(rng: &rng, w: w, h: h, occ: &occ,
-                      islandCells: islandCells, degree: &degree, bridges: &bridges)
+                      islandCells: islandCells, degree: &degree, mizoris: &mizoris)
 
         // Build clues from degrees.
         var clues = [HashiClue]()
@@ -160,7 +160,7 @@ struct HashiGenerator {
 
     private func addExtraEdges(rng: inout HashiRandom, w: Int, h: Int,
                                occ: inout [Int], islandCells: [Int],
-                               degree: inout [Int: Int], bridges: inout [String: Int]) {
+                               degree: inout [Int: Int], mizoris: inout [String: Int]) {
         func key(_ a: Int, _ b: Int) -> String { a < b ? "\(a)-\(b)" : "\(b)-\(a)" }
         let isIsland = Set(islandCells)
 
@@ -215,7 +215,7 @@ struct HashiGenerator {
 
         candidates = rng.shuffled(candidates)
         for (a, b, inter, mark) in candidates {
-            if bridges[key(a, b)] != nil { continue }
+            if mizoris[key(a, b)] != nil { continue }
             if !rng.chance(extraEdgeProb) { continue }
             if (degree[a] ?? 0) >= 8 || (degree[b] ?? 0) >= 8 { continue }
             // Re-check clear (a previous extra edge may have filled cells).
@@ -226,19 +226,19 @@ struct HashiGenerator {
             let count = dbl ? 2 : 1
             if (degree[a] ?? 0) + count > 8 || (degree[b] ?? 0) + count > 8 { continue }
             for ic in inter { occ[ic] = mark }
-            bridges[key(a, b)] = count
+            mizoris[key(a, b)] = count
             degree[a, default: 0] += count
             degree[b, default: 0] += count
         }
 
-        // Upgrade some single bridges to doubles.
-        for (k, v) in bridges where v == 1 {
+        // Upgrade some single mizoris to doubles.
+        for (k, v) in mizoris where v == 1 {
             let parts = k.split(separator: "-").compactMap { Int($0) }
             guard parts.count == 2 else { continue }
             let a = parts[0], b = parts[1]
             if (degree[a] ?? 0) >= 8 || (degree[b] ?? 0) >= 8 { continue }
             if rng.chance(upgradeProb) {
-                bridges[k] = 2
+                mizoris[k] = 2
                 degree[a, default: 0] += 1
                 degree[b, default: 0] += 1
             }
@@ -246,7 +246,7 @@ struct HashiGenerator {
     }
 
     private func trivialFallback(seed: UInt64) -> GenResult {
-        // A guaranteed-unique 2-island puzzle (a single forced bridge).
+        // A guaranteed-unique 2-island puzzle (a single forced mizori).
         let w = size.width, h = size.height
         let clues = [HashiClue(r: 0, c: 0, need: 1), HashiClue(r: 0, c: 1, need: 1)]
         return GenResult(puzzle: HashiPuzzle(width: w, height: h, clues: clues),

@@ -46,7 +46,7 @@ struct HashiGridSize: Codable, Equatable {
 
 // MARK: - Puzzle definition
 
-/// An island as specified in a puzzle (position + required bridge count).
+/// An island as specified in a puzzle (position + required mizori count).
 struct HashiClue: Codable, Equatable {
     let r: Int
     let c: Int
@@ -68,10 +68,10 @@ struct HashiPuzzle: Codable, Equatable {
     }
 }
 
-// MARK: - Edges (candidate bridge channels)
+// MARK: - Edges (candidate mizori channels)
 
-/// A candidate bridge between two collinear, consecutive islands with no
-/// island and nothing geometrically between them. Carries 0, 1 or 2 bridges.
+/// A candidate mizori between two collinear, consecutive islands with no
+/// island and nothing geometrically between them. Carries 0, 1 or 2 mizoris.
 struct HashiEdge {
     let a: Int            // index into clues
     let b: Int            // index into clues

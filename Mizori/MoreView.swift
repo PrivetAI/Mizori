@@ -51,7 +51,7 @@ struct MoreView: View {
 
     private var aboutCard: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("About Bridge Logic").font(.system(size: 15, weight: .bold)).foregroundColor(Palette.ink)
+            Text("About Mizori").font(.system(size: 15, weight: .bold)).foregroundColor(Palette.ink)
             Text("Every puzzle is generated and proven to have one unique, fully-logical solution by the built-in solver — no guessing required. Connect the islands, find your calm.")
                 .font(.system(size: 13, weight: .medium)).foregroundColor(Palette.inkSoft)
                 .fixedSize(horizontal: false, vertical: true)

@@ -108,7 +108,7 @@ struct BackButton: View {
     }
 }
 
-/// A labelled toggle row matching the theme (no system Toggle styling drift).
+/// A labelled toggle row matching the theme (no system Toggle styling mizori).
 struct ZenToggle: View {
     let title: String
     let detail: String

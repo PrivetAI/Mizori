@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Deduction reporting
 
-/// One logical step a human (or the solver) can make: a channel's bridge
+/// One logical step a human (or the solver) can make: a channel's mizori
 /// count becomes fully determined, with a reason and the technique tier used.
 struct HashiDeduction {
     let edge: Int
@@ -17,7 +17,7 @@ struct HashiAnalysis {
     let deducible: Bool          // fully solvable by the deduction engine
     let difficulty: HashiDifficulty
     let topTier: Int
-    let solution: [Int]?         // bridge count per edge, if known
+    let solution: [Int]?         // mizori count per edge, if known
     let steps: [HashiDeduction]  // ordered deduction trace (for hints)
 }
 
@@ -90,7 +90,7 @@ final class HashiSolver {
                             changed = true
                             if !wasFixed && lo[f] == hi[f] {
                                 onFix?(f, 0, max(tierForFix, 1),
-                                       "A bridge in the crossing channel blocks this one — they cannot intersect.")
+                                       "A mizori in the crossing channel blocks this one — they cannot intersect.")
                             }
                         }
                     }
@@ -106,9 +106,9 @@ final class HashiSolver {
         case 0:
             return "This channel must stay empty to keep island \(need) from exceeding its count."
         case 2:
-            return "Island \(need) can only reach its count by running a double bridge here."
+            return "Island \(need) can only reach its count by running a double mizori here."
         default:
-            return "Island \(need) forces exactly one bridge along this channel."
+            return "Island \(need) forces exactly one mizori along this channel."
         }
     }
 
@@ -308,7 +308,7 @@ final class HashiSolver {
 
     /// Classifies difficulty from a deduction trace by the most advanced
     /// technique required and how much of it is needed.
-    ///  - easy:   pure bridge-count propagation, no crossing logic.
+    ///  - easy:   pure mizori-count propagation, no crossing logic.
     ///  - medium: requires crossing logic.
     ///  - hard:   requires elimination (what-if) reasoning, but only a little.
     ///  - expert: requires heavy elimination or deep nested what-if.
@@ -333,7 +333,7 @@ final class HashiSolver {
 
     // MARK: Hint — next forced move relative to a player's board
 
-    /// Given the player's current bridge counts per edge, returns the first
+    /// Given the player's current mizori counts per edge, returns the first
     /// deduction in logical order that the player has not yet placed.
     func nextHint(playerValues: [Int]) -> HashiDeduction? {
         let d = deduce()
@@ -346,13 +346,13 @@ final class HashiSolver {
         if let sol = (d.solved ? d.lo : nil) {
             for e in 0..<edgeCount where playerValues[e] != sol[e] {
                 return HashiDeduction(edge: e, value: sol[e], tier: 0,
-                                      reason: "This channel needs \(sol[e]) bridge\(sol[e] == 1 ? "" : "s") in the final layout.")
+                                      reason: "This channel needs \(sol[e]) mizori\(sol[e] == 1 ? "" : "s") in the final layout.")
             }
         }
         return nil
     }
 
-    /// Returns the full unique solution as bridge counts per edge, if deducible.
+    /// Returns the full unique solution as mizori counts per edge, if deducible.
     func solvedValues() -> [Int]? {
         let d = deduce()
         return d.solved ? d.lo : nil

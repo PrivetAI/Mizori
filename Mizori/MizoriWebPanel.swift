@@ -2,7 +2,7 @@ import SwiftUI
 import WebKit
 
 /// Serves both the fullscreen gate WebView and the Settings → Privacy sheet.
-struct BridgeWaterPanel: UIViewRepresentable {
+struct MizoriWaterPanel: UIViewRepresentable {
     let urlString: String
 
     func makeUIView(context: Context) -> WKWebView {

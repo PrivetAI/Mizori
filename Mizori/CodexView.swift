@@ -21,7 +21,7 @@ struct MiniDiagram: View {
             for l in links {
                 let a = pt(l.ar, l.ac), b = pt(l.br, l.bc)
                 let horiz = l.ar == l.br
-                let color = l.ghost ? Palette.coral.opacity(0.5) : Palette.driftwood
+                let color = l.ghost ? Palette.coral.opacity(0.5) : Palette.mizoriwood
                 let style = l.ghost
                     ? StrokeStyle(lineWidth: 3, lineCap: .round, dash: [4, 4])
                     : StrokeStyle(lineWidth: 3, lineCap: .round)
@@ -68,14 +68,14 @@ struct CodexView: View {
                         BackButton { presentationMode.wrappedValue.dismiss() }
                         Spacer()
                     }
-                    ScreenTitle(title: "How to Play", subtitle: "Bridges, rules & deduction")
+                    ScreenTitle(title: "How to Play", subtitle: "Mizoris, rules & deduction")
 
                     rulesCard
                     controlsCard
                     techniquesHeader
                     techCard(
                         title: "Full island",
-                        text: "An island whose number equals the maximum bridges its open channels can hold must use them all. A “4” with exactly two neighbours takes a double bridge to each.",
+                        text: "An island whose number equals the maximum mizoris its open channels can hold must use them all. A “4” with exactly two neighbours takes a double mizori to each.",
                         diagram: MiniDiagram(cols: 3, rows: 1,
                             nodes: [.init(r: 0, c: 0, n: 2, satisfied: true),
                                     .init(r: 0, c: 1, n: 4, satisfied: true),
@@ -84,14 +84,14 @@ struct CodexView: View {
                                     .init(ar: 0, ac: 1, br: 0, bc: 2, count: 2, ghost: false)]))
                     techCard(
                         title: "Forced single",
-                        text: "If an island still needs a bridge and only one channel remains open, a bridge must run there — even before you know if it becomes a double.",
+                        text: "If an island still needs a mizori and only one channel remains open, a mizori must run there — even before you know if it becomes a double.",
                         diagram: MiniDiagram(cols: 3, rows: 1,
                             nodes: [.init(r: 0, c: 0, n: 1, satisfied: false),
                                     .init(r: 0, c: 2, n: 1, satisfied: false)],
                             links: [.init(ar: 0, ac: 0, br: 0, bc: 2, count: 1, ghost: true)]))
                     techCard(
                         title: "No crossing",
-                        text: "Bridges never cross. If a horizontal bridge is forced, every vertical channel passing through it is ruled out — and vice-versa.",
+                        text: "Mizoris never cross. If a horizontal mizori is forced, every vertical channel passing through it is ruled out — and vice-versa.",
                         diagram: MiniDiagram(cols: 3, rows: 3,
                             nodes: [.init(r: 1, c: 0, n: 2, satisfied: true),
                                     .init(r: 1, c: 2, n: 2, satisfied: true),
@@ -125,10 +125,10 @@ struct CodexView: View {
     private var rulesCard: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("The rules").font(.system(size: 16, weight: .bold)).foregroundColor(Palette.ink)
-            bullet("Connect islands with horizontal or vertical bridges.")
-            bullet("Each island’s number = the count of bridge-ends touching it.")
-            bullet("At most TWO bridges between any pair of islands.")
-            bullet("Bridges never cross and never pass through an island.")
+            bullet("Connect islands with horizontal or vertical mizoris.")
+            bullet("Each island’s number = the count of mizori-ends touching it.")
+            bullet("At most TWO mizoris between any pair of islands.")
+            bullet("Mizoris never cross and never pass through an island.")
             bullet("When finished, all islands form a single connected network.")
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -138,7 +138,7 @@ struct CodexView: View {
     private var controlsCard: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Controls").font(.system(size: 16, weight: .bold)).foregroundColor(Palette.ink)
-            bullet("Tap one island, then a second in line to add a bridge.")
+            bullet("Tap one island, then a second in line to add a mizori.")
             bullet("Or drag from one island to another.")
             bullet("Tapping the same pair cycles: none → single → double → none.")
             bullet("Pinch to zoom and drag the water to pan on large grids.")

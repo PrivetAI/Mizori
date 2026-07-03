@@ -93,7 +93,7 @@ struct CompassGlyph: Shape {
     }
 }
 
-// MARK: - Island disc + bridge marks (used as glyphs and brand)
+// MARK: - Island disc + mizori marks (used as glyphs and brand)
 
 struct IslandGlyph: Shape {
     func path(in rect: CGRect) -> Path {
@@ -105,7 +105,7 @@ struct IslandGlyph: Shape {
     }
 }
 
-struct BridgeGlyph: Shape {
+struct MizoriGlyph: Shape {
     func path(in rect: CGRect) -> Path {
         var p = Path()
         let w = rect.width, h = rect.height
