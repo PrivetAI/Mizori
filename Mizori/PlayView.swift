@@ -129,8 +129,9 @@ struct PackDetailView: View {
             WaterBackground()
             ScrollView {
                 VStack(spacing: 16) {
+                    HStack { BackButton { presentationMode.wrappedValue.dismiss() }; Spacer() }
+                        .padding(.top, 4)
                     ScreenTitle(title: pack.title, subtitle: "\(pack.subtitle) • \(pack.size.label) • \(pack.difficulty.title)")
-                        .padding(.top, 8)
                     LazyVGrid(columns: columns, spacing: 12) {
                         ForEach(0..<pack.count, id: \.self) { i in
                             puzzleTile(i)
